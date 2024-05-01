@@ -49,7 +49,7 @@ async function sendMessage() {
 }
 
 async function getMessages(message) {
-	const backendEndpoint = "http://127.0.0.1:5000/chat";
+	const backendEndpoint = "http://127.0.0.1:5000";
 	try {
 		const response = await fetch(backendEndpoint, {
 			method: "POST",

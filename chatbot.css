@@ -153,8 +153,8 @@ body {
 /* Styles for mobile */
 @media screen and (max-width: 480px) {
     #chatContainer {
-        width: 85%;
-        height: 85%;
+        width: 80%;
+        height: 80%;
         overflow-y: auto;
     }
     #chatbox {

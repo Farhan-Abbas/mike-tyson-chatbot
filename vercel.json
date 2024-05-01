@@ -11,8 +11,8 @@
             "destination": "/api/chat.py"
         },
         {
-            "source": "/",
-            "destination": "/chatbot.html"
+            "source": "/(.*)",
+            "destination": "/"
         }
     ]
 }

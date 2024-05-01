@@ -5,20 +5,14 @@
             "use": "@vercel/python"
         }
     ],
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/api/chat.py"
-        },
-        {
-            "src": "/",
-            "dest": "/chatbot.html"
-        }
-    ],
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/"
+            "source": "/api/(.*)",
+            "destination": "/api/chat.py"
+        },
+        {
+            "source": "/",
+            "destination": "/chatbot.html"
         }
     ]
 }

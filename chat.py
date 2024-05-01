@@ -9,8 +9,9 @@ CORS(app, origins=['http://127.0.0.1:5500'])
 
 client = OpenAI()
 
+@app.route('/chat', methods=['POST'])
 def chat(req):
-  data = req.json
+  data = req.get_json()
   response = client.chat.completions.create(
     model="gpt-4",
     messages=[
@@ -26,4 +27,4 @@ def chat(req):
     temperature=1,
     max_tokens=256,
   )
-  return {'statusCode': 200, 'body': {'message': response.choices[0].message.content}}
+  return {'message': response.choices[0].message.content}

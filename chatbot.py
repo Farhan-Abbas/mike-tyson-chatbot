@@ -1,3 +1,5 @@
+# /api/chat.py
+# /api/chat.py
 from flask import Flask, request
 from flask_cors import CORS
 from openai import OpenAI
@@ -7,9 +9,8 @@ CORS(app, origins=['http://127.0.0.1:5500'])
 
 client = OpenAI()
 
-@app.route('/chat', methods=['POST'])
-def chat():
-  data = request.get_json()
+def chat(req):
+  data = req.json
   response = client.chat.completions.create(
     model="gpt-4",
     messages=[
@@ -25,7 +26,4 @@ def chat():
     temperature=1,
     max_tokens=256,
   )
-  return {'message': response.choices[0].message.content}
-
-if __name__ == '__main__':
-  app.run(debug=True)
+  return {'statusCode': 200, 'body': {'message': response.choices[0].message.content}}

@@ -14,5 +14,11 @@
             "src": "/",
             "dest": "/chatbot.html"
         }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
     ]
 }

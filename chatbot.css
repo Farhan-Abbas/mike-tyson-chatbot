@@ -165,10 +165,10 @@ body {
     }
     #chatContainer {
         width: 80%;
-        height: auto; /* Changed from 80% to auto */
+        height: 80%;
         overflow-y: auto;
     }
     #chatbox {
-        height: auto; /* Changed from 75% to auto */
+        height: 75%;
     }
 }

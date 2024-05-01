@@ -8,7 +8,7 @@ CORS(app, origins=['http://127.0.0.1:5500'])
 
 client = OpenAI()
 
-@app.route('/chat', methods=['GET', 'POST'])
+@app.route('/chat', methods=['POST'])
 def chat():
   data = request.get_json()
   response = client.chat.completions.create(
@@ -27,10 +27,6 @@ def chat():
     max_tokens=256,
   )
   return {'message': response.choices[0].message.content}
-
-@app.route("/favicon.ico")
-def favicon():
-    return "", 200
 
 # if __name__ == '__main__':
 #   app.run(debug=True)

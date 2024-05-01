@@ -42,12 +42,9 @@ async function sendMessage() {
 	setTimeout(async function () {
 		mikeMessage.textContent = await getMessages(message);
 		mikeMessage.classList.remove("typing");
-	}, 1500);
-
-	// Scroll to the bottom of the chatbox
-	setTimeout(() => {
+		// Scroll to the bottom of the chatbox
 		chatbox.scrollTop = chatbox.scrollHeight;
-	}, 0);
+	}, 1500);
 }
 
 async function getMessages(message) {

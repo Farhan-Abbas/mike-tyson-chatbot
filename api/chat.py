@@ -8,7 +8,7 @@ CORS(app, origins=['https://mike-tyson-chatbot.vercel.app'])
 
 client = OpenAI()
 
-@app.route('/api/chat', methods=['POST'])
+@app.route('/api/chat.py', methods=['POST'])
 def chat():
   data = request.get_json()
   response = client.chat.completions.create(

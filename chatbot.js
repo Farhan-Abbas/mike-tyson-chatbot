@@ -49,7 +49,7 @@ async function sendMessage() {
 }
 
 async function getMessages(message) {
-	const backendEndpsoint = "https://mike-tyson-chatbot.vercel.app/";
+	const backendEndpoint = "https://mike-tyson-chatbot.vercel.app/";
 	try {
 		const response = await fetch(backendEndpoint, {
 			method: "POST",

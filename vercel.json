@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/api/chat"
+            "destination": "/chatbot.html"
         }
     ]
 }

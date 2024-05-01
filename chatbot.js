@@ -49,26 +49,28 @@ async function sendMessage() {
 }
 
 async function getMessages(message) {
-	const backendEndpoint = "https://mike-tyson-chatbot.vercel.app/api/chat";
-	try {
-		const response = await fetch(backendEndpoint, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ message: message }),
-		});
-		const data = await response.json();
-		if (response.ok) {
-			console.log(data["message"]);
-			console.log("Message received successfully!");
-			return data["message"];
-		} else {
-			console.error("Error receiving message!.");
-		}
-	} catch (error) {
-		console.error("Error sending data!", error);
-	}
+    const backendEndpoint = "https://mike-tyson-chatbot.vercel.app/api/chat";
+    try {
+        const response = await fetch(backendEndpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message: message }),
+        });
+        const text = await response.text();
+        console.log("Raw response:", text);
+        const data = JSON.parse(text);
+        if (response.ok) {
+            console.log(data["message"]);
+            console.log("Message received successfully!");
+            return data["message"];
+        } else {
+            console.error("Error receiving message!.");
+        }
+    } catch (error) {
+        console.error("Error sending data!", error);
+    }
 }
 
 function handleKeyPress(event) {

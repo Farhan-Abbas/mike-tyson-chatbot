@@ -11,7 +11,7 @@
             "dest": "/api/chat.py"
         },
         {
-            "src": "/(.*)",
+            "src": "/",
             "dest": "/chatbot.html"
         }
     ]

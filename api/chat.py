@@ -8,7 +8,7 @@ CORS(app, origins=['http://127.0.0.1:5500'])
 
 client = OpenAI()
 
-@app.route('/', methods=['POST'])
+@app.route('/api/chat', methods=['POST'])
 def chat():
   data = request.get_json()
   response = client.chat.completions.create(

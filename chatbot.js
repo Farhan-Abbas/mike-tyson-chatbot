@@ -59,7 +59,6 @@ async function getMessages(message) {
             body: JSON.stringify({ message: message }),
         });
         const text = await response.text();
-        console.log("Raw response:", text);
         const data = JSON.parse(text);
         if (response.ok) {
             console.log(data["message"]);

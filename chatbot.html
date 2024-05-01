@@ -4,22 +4,20 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Mike Tyson Chatbot</title>
+		<link rel="icon" href="images/boxing gloves icon.jpg" />
 		<link rel="stylesheet" href="chatbot.css" />
 	</head>
 	<body>
 		<div id="chatContainer">
 			<h1>Mike 'Iron' Tyson</h1>
 			<div id="chatbox">
-				<div id="messageContainer">
-					<img
-						src="images/mike tyson potrait.jpg"
-						alt="Mike Tyson"
-						class="mikeProfilePic"
-					/>
+				<div class="mikeMessageContainer">
+					<img src="images/mike tyson portrait.jpg" alt="Mike Tyson" class="mikeProfilePic" />
 					<div class="message mike">
-						Hey, how you doin', champ? It's Mike Tyson here.
+						Yo, it's the baddest man on the planet, Mike Tyson, in the house. Ready to chat?
 					</div>
 				</div>
+				<div id="typingIndicator" style="display: none;"></div>
 			</div>
 			<div id="inputContainer">
 				<input type="text" id="userInput" onkeypress="handleKeyPress(event)" />

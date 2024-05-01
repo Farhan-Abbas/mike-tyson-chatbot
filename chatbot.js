@@ -4,35 +4,45 @@ async function sendMessage() {
 	input.value = "";
 
 	var chatbox = document.getElementById("chatbox");
-    
-	var messageContainer = document.createElement("div");
-    messageContainer.id = "messageContainer";
+
+	var userMessageContainer = document.createElement("div");
+	userMessageContainer.className = "userMessageContainer";
+
 	var userMessage = document.createElement("div");
 	userMessage.className = "message user";
 	userMessage.textContent = message;
-	messageContainer.appendChild(userMessage);
-	chatbox.appendChild(messageContainer);
+	userMessageContainer.appendChild(userMessage);
 
-    var image = document.createElement("img");
-    image.src = "images/user profile pic.jpg";
-    image.alt = "User";
-    image.className = "userProfilePic";
-    messageContainer.appendChild(image);
-
-	var messageContainer = document.createElement("div");
-    messageContainer.id = "messageContainer";
-	var messageFromMike = message;
 	var image = document.createElement("img");
-	image.src = "images/mike tyson potrait.jpg";
+	image.src = "images/user profile pic.jpg";
+	image.alt = "User";
+	image.className = "userProfilePic";
+	userMessageContainer.appendChild(image);
+
+	chatbox.appendChild(userMessageContainer);
+
+	// mike's response
+
+	var mikeMessageContainer = document.createElement("div");
+	mikeMessageContainer.className = "mikeMessageContainer";
+
+	var image = document.createElement("img");
+	image.src = "images/mike tyson portrait.jpg";
 	image.alt = "Mike Tyson";
 	image.className = "mikeProfilePic";
-	messageContainer.appendChild(image);
+	mikeMessageContainer.appendChild(image);
 
 	var mikeMessage = document.createElement("div");
-	mikeMessage.className = "message mike";
-	mikeMessage.textContent = messageFromMike;
-	messageContainer.appendChild(mikeMessage);
-    chatbox.appendChild(messageContainer);
+	mikeMessage.className = "message mike typing";
+	mikeMessage.textContent = "...";
+	mikeMessageContainer.appendChild(mikeMessage);
+
+	chatbox.appendChild(mikeMessageContainer);
+
+	setTimeout(async function () {
+		mikeMessage.textContent = await getMessages(message);
+		mikeMessage.classList.remove("typing");
+	}, 1500);
 
 	// Scroll to the bottom of the chatbox
 	chatbox.scrollTop = chatbox.scrollHeight;
@@ -67,3 +77,5 @@ function handleKeyPress(event) {
 		sendMessage();
 	}
 }
+
+

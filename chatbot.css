@@ -4,23 +4,29 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #1a1a1a; /* Dark background */
-    font-family: Arial, sans-serif;
+    background-image: url("images/boxing ring.jpg");    font-family: Arial, sans-serif;
     color: #f0f0f0; /* Light text */
 }
 
 #chatContainer {
-    width: 300px;
+    width: 350px;
     border: 1px solid #f0f0f0; /* Light border */
     padding: 10px;
     background-color: #2a2a2a; /* Darker chat container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#chatContainer h1 {
+    text-align: center;
+    font-family: Impact, Arial, sans-serif;
 }
 
 #chatbox {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 300px;
+    height: 370px;
     overflow-y: auto;
     padding: 10px;
     border: 1px solid #f0f0f0; /* Light border */
@@ -32,6 +38,12 @@ body {
     padding: 10px;
     margin: 10px;
     border-radius: 10px 10px 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.message:hover {
+    background-color: #1a1a1a; /* Darker message on hover */
+    color: #f0f0f0; /* Light text on hover */
 }
 
 .user {
@@ -78,16 +90,74 @@ body {
     margin-right: 5px;
 }
 
-#messageContainer {
+.mikeMessageContainer {
+    width: 100%;
     display: flex;
     align-items: flex-end;
     margin-bottom: 10px;
 }
 
+.userMessageContainer {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
 .userProfilePic {
-    align-self: flex-end;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     margin-left: 5px;
+}
+
+@keyframes typing {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.typing {
+    animation: typing 1s infinite;
+}
+
+#chatbox::-webkit-scrollbar {
+    width: 10px;
+}
+
+#chatbox::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#chatbox::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#chatbox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Styles for desktop */
+#chatContainer {
+    width: 600px;
+}
+
+/* Styles for tablet */
+@media screen and (max-width: 768px) {
+    #chatContainer {
+        width: 80%;
+    }
+}
+
+/* Styles for mobile */
+@media screen and (max-width: 480px) {
+    #chatContainer {
+        width: 85%;
+        height: 85%;
+        overflow-y: auto;
+    }
+    #chatbox {
+        height: 80%;
+    }
 }

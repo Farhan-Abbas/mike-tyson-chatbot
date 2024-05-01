@@ -45,7 +45,9 @@ async function sendMessage() {
 	}, 1500);
 
 	// Scroll to the bottom of the chatbox
-	chatbox.scrollTop = chatbox.scrollHeight;
+	setTimeout(() => {
+		chatbox.scrollTop = chatbox.scrollHeight;
+	}, 0);
 }
 
 async function getMessages(message) {

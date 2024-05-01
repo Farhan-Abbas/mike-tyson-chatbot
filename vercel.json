@@ -5,10 +5,10 @@
             "use": "@vercel/python"
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/(.*)",
-            "dest": "/api/chat.py"
+            "source": "/api/(.*)",
+            "destination": "/api/chat.py"
         }
     ]
 }

@@ -4,7 +4,7 @@ from flask_cors import CORS
 from openai import OpenAI
 
 app = Flask(__name__)
-CORS(app, origins=['http://127.0.0.1:5500'])
+CORS(app, origins=['https://mike-tyson-chatbot.vercel.app/api/chat'])
 
 client = OpenAI()
 
@@ -28,5 +28,5 @@ def chat():
   )
   return {'message': response.choices[0].message.content}
 
-if __name__ == '__main__':
-  app.run(debug=True)
+# if __name__ == '__main__':
+#   app.run(debug=True)

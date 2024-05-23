@@ -8,5 +8,11 @@
             "source": "/(.*)",
             "destination": "/chatbot.html"
         }
-    ]
+    ],
+
+    "functions": {
+        "api/chat.py": {
+            "maxDuration": 30
+        }
+    }
 }

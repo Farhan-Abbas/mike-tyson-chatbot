@@ -39,6 +39,7 @@ async function sendMessage() {
 	mikeMessageContainer.appendChild(mikeMessage);
 
 	chatbox.appendChild(mikeMessageContainer);
+    chatbox.scrollTop = chatbox.scrollHeight;
 
 	setTimeout(async function () {
 		mikeMessage.textContent = await getMessages(message);

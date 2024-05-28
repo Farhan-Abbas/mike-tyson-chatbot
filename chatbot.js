@@ -20,6 +20,7 @@ async function sendMessage() {
 	userMessageContainer.appendChild(image);
 
 	chatbox.appendChild(userMessageContainer);
+    chatbox.scrollTop = chatbox.scrollHeight;
 
 	// mike's response
 

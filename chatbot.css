@@ -4,7 +4,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("images/boxing ring.jpg");    font-family: Arial, sans-serif;
+    background-image: url("images/boxing ring.jpg");
+    background-size: cover; /* Make the image cover the entire background */
+    background-position: center; /* Center the image */
+    font-family: Arial, sans-serif;
     color: #f0f0f0; /* Light text */
 }
 
